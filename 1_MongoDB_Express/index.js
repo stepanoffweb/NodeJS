@@ -12,10 +12,10 @@ const hbs = exphbs.create({
   extname: 'hbs'
 });// у объекта hbs есть параметр engine
 
-app.engine('hbs', hbs.engine);// пошла жара - регистрация движка д/рендеринга страниц по произвольному ключу 'hbs'
+app.engine('hbs', hbs.engine);// регистрация движка д/рендеринга страниц по произвольному ключу 'hbs'
 app.set('view engine', 'hbs');// установим движок по умолчанию handlebars по ключу hbs
 app.set('views', 'views');// папка по умолчанию со всеми views сайта - одноименная
-app.use(express.urlencoded({ extended: true }));//для хз...("считывать 'body' клиентского запроса ")
+app.use(express.urlencoded({ extended: true }));//"считывать 'body' клиентского запроса "
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(todoRoutes);
